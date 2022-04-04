@@ -12,7 +12,9 @@ app.get('/', function (req, res) {
 
         response.on("data", function (data){
            const weatherData = JSON.parse(data);
-           console.log(weatherData);
+           const temperature = weatherData.main.temp
+           const description = weatherData.weather[0].description
+           console.log("今日は" + temperature + " 零度で" + description + "です");
         })
     })
 })
